@@ -18,128 +18,145 @@
             height: 100%;
             padding: 0;
             margin: 0;
+            background-color: #111111 !important;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow: hidden;
         }
 
-        /* Başlık ve Açıklama Kutusu */
+        /* Gelişmiş Cam Efektli Başlık Paneli */
         .info-box {
             position: absolute;
             top: 20px;
-            left: 50px;
+            left: 60px;
             z-index: 1000;
-            background: rgba(30, 30, 30, 0.85);
-            color: #fff;
-            padding: 15px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
-            backdrop-filter: blur(5px);
-            max-width: 350px;
-            pointer-events: none; /* Harita etkileşimini engellememesi için */
+            background: rgba(20, 20, 20, 0.8);
+            color: #ffffff;
+            padding: 18px 22px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 380px;
+            pointer-events: none;
         }
-        .info-box h2 { margin: 0 0 10px 0; font-size: 18px; font-weight: 600; color: #4CAF50;}
-        .info-box p { margin: 0; font-size: 13px; line-height: 1.5; color: #ddd; }
+        .info-box h2 { margin: 0 0 8px 0; font-size: 20px; font-weight: 700; color: #2ed573; tracking-letter: 0.5px;}
+        .info-box p { margin: 0; font-size: 13px; line-height: 1.6; color: #ccaeae; color: #b3b3b3; }
 
-        /* Yapan / Künye Kutusu */
+        /* Modern Künye Tasarımı (Sol Alt) */
         .author-watermark {
             position: absolute;
             bottom: 30px;
             left: 20px;
             z-index: 1000;
-            background: rgba(20, 20, 20, 0.9);
-            color: #fff;
-            padding: 10px 15px;
-            border-radius: 6px;
-            font-size: 14px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            border-left: 4px solid #4CAF50;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+            background: rgba(15, 15, 15, 0.85);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            border: 1px solid rgba(46, 213, 115, 0.4);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+            backdrop-filter: blur(5px);
             pointer-events: none;
         }
 
-        /* Modernize Edilmiş Lejant */
+        /* Gelişmiş Karanlık Temalı Lejant ve Katman Ağacı */
         .leaflet-control-layers {
-            border-radius: 12px !important;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
-            background: rgba(255, 255, 255, 0.95) !important;
-            padding: 12px !important;
-            border: none !important;
+            background: rgba(25, 25, 25, 0.9) !important;
+            color: #ffffff !important;
+            border-radius: 14px !important;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7) !important;
+            padding: 16px !important;
+            border: 1px solid rgba(255,255,255,0.08) !important;
+            backdrop-filter: blur(10px);
+            max-height: 75vh;
+            overflow-y: auto;
         }
-        .leaflet-control-layers-list {
-            font-size: 13px;
-            color: #333;
+        .leaflet-control-layers-list { font-size: 13px; }
+        .leaflet-control-layers td { padding: 4px 0 !important; color: #e0e0e0; }
+        .leaflet-control-layers table { margin: 6px 0 12px 10px; width: 100%; font-size: 11px; color: #b3b3b3; }
+        .leaflet-control-layers img { vertical-align: middle; margin-right: 6px; border-radius: 2px; }
+        
+        /* Harita Butonlarının Özelleştirilmesi */
+        .leaflet-bar { border: none !important; box-shadow: 0 4px 15px rgba(0,0,0,0.5) !important; }
+        .leaflet-bar a {
+            background-color: rgba(30, 30, 30, 0.9) !important;
+            color: #ffffff !important;
+            border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+            transition: all 0.3s ease;
+        }
+        .leaflet-bar a:hover { background-color: #2ed573 !important; color: #111111 !important; }
+        .leaflet-control-measure {
+            background: rgba(30, 30, 30, 0.95) !important;
+            color: #fff !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            border-radius: 8px !important;
         }
 
-        /* Öznitelik Tablosu (Attribute Table) */
+        /* Gelişmiş Alt Öznitelik Tablosu (Attribute Table) */
         .attr-table-container {
             position: absolute;
-            bottom: -300px; /* Başlangıçta gizli */
+            bottom: -320px;
             left: 0;
             width: 100%;
             height: 300px;
-            background: #fff;
-            z-index: 1001;
-            box-shadow: 0 -4px 15px rgba(0,0,0,0.3);
-            transition: bottom 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            background: #161616;
+            z-index: 2000;
+            box-shadow: 0 -10px 40px rgba(0,0,0,0.8);
+            transition: bottom 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
             display: flex;
             flex-direction: column;
+            border-top: 3px solid #2ed573;
         }
-        .attr-table-container.active {
-            bottom: 0;
-        }
+        .attr-table-container.active { bottom: 0; }
         .attr-table-header {
-            background: #2c3e50;
-            color: #ecf0f1;
-            padding: 12px 20px;
+            background: #1e1e1e;
+            color: #ffffff;
+            padding: 14px 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid #2a2a2a;
         }
-        .attr-table-header h3 { margin: 0; font-size: 16px; font-weight: 500; }
+        .attr-table-header h3 { margin: 0; font-size: 15px; font-weight: 600; letter-spacing: 0.5px; color: #2ed573; }
         .close-btn { 
-            cursor: pointer; 
-            background: #e74c3c; 
-            color: white; 
-            border: none; 
-            padding: 6px 15px; 
-            border-radius: 4px;
-            font-weight: bold;
-            transition: 0.2s;
+            cursor: pointer; background: #ff4757; color: white; border: none; 
+            padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; transition: 0.2s;
         }
-        .close-btn:hover { background: #c0392b; }
+        .close-btn:hover { background: #ff6b81; transform: scale(1.05); }
+        .attr-table-wrapper { flex-grow: 1; overflow: auto; background: #111111; }
+        .attr-table { width: 100%; border-collapse: collapse; min-width: 900px; }
+        .attr-table th, .attr-table td { border: 1px solid #252525; padding: 12px; text-align: left; font-size: 12px; color: #dcdde1; }
+        .attr-table th { background: #1c1c1c; position: sticky; top: 0; z-index: 10; color: #2ed573; font-weight: 600; }
+        .attr-table tr:nth-child(even){ background-color: #151515; }
+        .attr-table tr:hover { background-color: #202020; }
         
-        .attr-table-wrapper {
-            flex-grow: 1;
-            overflow: auto;
-            background: #fdfdfd;
+        /* Tooltip & Popup Özelleştirmeleri */
+        .leaflet-popup-content-wrapper, .leaflet-popup-tip {
+            background: #1e1e1e !important; color: #fff !important; border-radius: 8px;
         }
-        .attr-table { width: 100%; border-collapse: collapse; min-width: 800px; }
-        .attr-table th, .attr-table td { border: 1px solid #e0e0e0; padding: 10px; text-align: left; font-size: 13px; }
-        .attr-table th { background: #ecf0f1; position: sticky; top: 0; z-index: 10; color: #333;}
-        .attr-table tr:nth-child(even){background-color: #f9f9f9;}
-        .attr-table tr:hover {background-color: #f1f2f6;}
+        .leaflet-popup-content table tr td { color: #ddd !important; }
         </style>
-        <title>AVM Etki Analizi</title>
+        <title>Gelişmiş CBS Analiz Paneli</title>
     </head>
     <body>
         <div id="map"></div>
 
-        <!-- Üst Bilgi Kutusu -->
         <div class="info-box">
-            <h2>AVM Etki Analizi ve Kentsel Skorlar</h2>
-            <p>Bu interaktif harita; ulaşım, yeşil alan skorları ve genç nüfus potansiyeli gibi çevresel etkileri analiz etmektedir. Sağ üst panelden farklı analiz katmanlarını açıp kapatabilir, açılan katmanların öznitelik tablosunu ekranın altında görüntüleyebilirsiniz.</p>
+            <h2>AVM Etki Analizi & Kentsel Skorlar</h2>
+            <p>Ulaşım, yeşil alan endeksleri ve erişilebilir genç nüfus potansiyeli veri katmanları panelidir. Sağdaki kontrol merkezinden aktif ettiğiniz katmanların detaylı öznitelik veri tabloları alt kısımda dinamik olarak listelenir.</p>
         </div>
 
-        <!-- Yapan Künyesi -->
         <div class="author-watermark">
-            YAPAN: ALİ İHSAN YILDIRIM
+            ALİ İHSAN YILDIRIM
         </div>
 
-        <!-- Dinamik Öznitelik Tablosu Konteyneri -->
         <div class="attr-table-container" id="tableContainer">
             <div class="attr-table-header">
-                <h3 id="tableTitle">Öznitelik Tablosu</h3>
-                <button class="close-btn" onclick="document.getElementById('tableContainer').classList.remove('active')">Kapat</button>
+                <h3 id="tableTitle">Veri Öznitelik Tablosu</h3>
+                <button class="close-btn" onclick="document.getElementById('tableContainer').classList.remove('active')">Paneli Gizle</button>
             </div>
             <div class="attr-table-wrapper">
                 <table class="attr-table" id="attributeTable">
@@ -180,8 +197,9 @@
             worldCopyJump: false, 
             zoomControl:false, maxZoom:28, minZoom:1
         }).fitBounds([[39.690104928174506,32.5631179900162],[40.010887761753246,33.44300658187027]]);
+        
         var hash = new L.Hash(map);
-        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>');
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; Leaflet');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         
         function removeEmptyRowsFromPopupContent(content, feature) {
@@ -207,27 +225,8 @@
                 if (/\.(jpg|jpeg|png|gif|bmp|webp|avif)$/i.test(src)) {
                     popup._contentNode.classList.add('media');
                     setTimeout(function() { popup.update(); }, 10);
-                } else if (/\.(mp3|wav|ogg|aac)$/i.test(src)) {
-                    var audio = document.createElement('audio');
-                    audio.controls = true;
-                    audio.src = src;
-                    imgTd.parentNode.replaceChild(audio, imgTd);
-                    popup._contentNode.classList.add('media');
-                    setTimeout(function() { popup.setContent(tempDiv.innerHTML); popup.update(); }, 10);
-                } else if (/\.(mp4|webm|ogg|mov)$/i.test(src)) {
-                    var video = document.createElement('video');
-                    video.controls = true;
-                    video.src = src;
-                    video.style.width = "400px";
-                    video.style.height = "300px";
-                    video.style.maxHeight = "60vh";
-                    video.style.maxWidth = "60vw";
-                    imgTd.parentNode.replaceChild(video, imgTd);
-                    popup._contentNode.classList.add('media');
-                    video.addEventListener('loadedmetadata', function() { popup.update(); });
-                    setTimeout(function() { popup.setContent(tempDiv.innerHTML); popup.update(); }, 10);
-                } else { popup._contentNode.classList.remove('media'); }
-            } else { popup._contentNode.classList.remove('media'); }
+                }
+            }
         }
         
         var zoomControl = L.control.zoom({ position: 'topleft' }).addTo(map);
@@ -244,84 +243,67 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {}
 
-        /* Altlık Harita (Sadece BaseMap - Koyu Renk) */
+        /* Koyu Taban Harita Paneli */
         map.createPane('pane_DarkMatternolabels_0');
         map.getPane('pane_DarkMatternolabels_0').style.zIndex = 400;
-        var layer_DarkMatternolabels_0 = L.tileLayer('https://a.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
+        var layer_DarkMatternolabels_0 = L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_nolabels/{z}/{x}/{y}.png', {
             pane: 'pane_DarkMatternolabels_0',
             opacity: 1.0,
-            attribution: '<a href="https://cartodb.com/basemaps/">Map tiles by CartoDB, under CC BY 3.0. Data by OpenStreetMap, under ODbL.</a>',
-            minZoom: 1,
-            maxZoom: 28,
-            minNativeZoom: 0,
-            maxNativeZoom: 20
+            attribution: 'CartoDB, OpenStreetMap',
+            minZoom: 1, maxZoom: 28
         });
-        layer_DarkMatternolabels_0;
         map.addLayer(layer_DarkMatternolabels_0);
 
-        /* 1. Katman: MAHALLE SINIRLARI */
+        /* Katman 1: MAHALLE SINIRLARI */
         function pop_MAHALLESINIRLARI_1(feature, layer) {
             var popupContent = '<table>\
-                    <tr><td colspan="2">' + (feature.properties['adi'] !== null ? autolinker.link(String(feature.properties['adi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
-                    <tr><td colspan="2">' + (feature.properties['adiadr'] !== null ? autolinker.link(String(feature.properties['adiadr']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
-                    <tr><td colspan="2">' + (feature.properties['iladi'] !== null ? autolinker.link(String(feature.properties['iladi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
-                    <tr><td colspan="2">' + (feature.properties['ilceadi'] !== null ? autolinker.link(String(feature.properties['ilceadi']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
-                    <tr><td colspan="2">' + (feature.properties['nufus_2022'] !== null ? autolinker.link(String(feature.properties['nufus_2022']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
+                    <tr><td colspan="2"><b>Adı:</b> ' + (feature.properties['adi'] !== null ? autolinker.link(String(feature.properties['adi'])) : '') + '</td></tr>\
+                    <tr><td colspan="2"><b>İlçe:</b> ' + (feature.properties['ilceadi'] !== null ? autolinker.link(String(feature.properties['ilceadi'])) : '') + '</td></tr>\
+                    <tr><td colspan="2"><b>Nüfus (2022):</b> ' + (feature.properties['nufus_2022'] !== null ? autolinker.link(String(feature.properties['nufus_2022'])) : '') + '</td></tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) { addClassToPopupIfMedia(content, e.popup); });
 			layer.bindPopup(content, { maxHeight: 400 });
         }
         function style_MAHALLESINIRLARI_1_0() {
-            return {
-                pane: 'pane_MAHALLESINIRLARI_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,0.6)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(151,163,146,0.6)',
-                interactive: false,
-            }
+            return { pane: 'pane_MAHALLESINIRLARI_1', opacity: 1, color: 'rgba(255,255,255,0.2)', weight: 1.0, fill: true, fillOpacity: 0.4, fillColor: 'rgba(70,80,75,0.5)', interactive: true }
         }
         map.createPane('pane_MAHALLESINIRLARI_1');
         map.getPane('pane_MAHALLESINIRLARI_1').style.zIndex = 401;
         var layer_MAHALLESINIRLARI_1 = new L.geoJson(json_MAHALLESINIRLARI_1, {
-            interactive: false,
-            dataVar: 'json_MAHALLESINIRLARI_1',
-            layerName: 'layer_MAHALLESINIRLARI_1',
-            pane: 'pane_MAHALLESINIRLARI_1',
-            onEachFeature: pop_MAHALLESINIRLARI_1,
-            style: style_MAHALLESINIRLARI_1_0,
+            interactive: true, dataVar: 'json_MAHALLESINIRLARI_1', layerName: 'layer_MAHALLESINIRLARI_1', pane: 'pane_MAHALLESINIRLARI_1', onEachFeature: pop_MAHALLESINIRLARI_1, style: style_MAHALLESINIRLARI_1_0,
         });
         bounds_group.addLayer(layer_MAHALLESINIRLARI_1);
-        map.addLayer(layer_MAHALLESINIRLARI_1); // Mahalle Sınırları Varsayılan Olarak AÇIK
+        map.addLayer(layer_MAHALLESINIRLARI_1); // Varsayılan Açık
 
-        /* 2. Katman: AVM ETKİ ANALİZİ */
-        function pop_AVMETKANALZ_2(feature, layer) {}
+        /* Katman 2: AVM ETKİ ANALİZİ */
+        function pop_AVMETKANALZ_2(feature, layer) {
+            var popupContent = '<table><tr><td colspan="2">' + (feature.properties['landuse_adi'] !== null ? autolinker.link(String(feature.properties['landuse_adi'])) : '') + '</td></tr></table>';
+            layer.bindPopup(popupContent, { maxHeight: 400 });
+        }
         function style_AVMETKANALZ_2_0() {
-            return { pane: 'pane_AVMETKANALZ_2', opacity: 1, color: 'rgba(35,35,35,1.0)', weight: 3.0, fill: true, fillOpacity: 1, fillColor: 'rgba(190,207,80,0.0)', interactive: true, }
+            return { pane: 'pane_AVMETKANALZ_2', opacity: 1, color: 'rgba(190,207,80,1.0)', weight: 3.0, fill: false, interactive: true }
         }
         map.createPane('pane_AVMETKANALZ_2');
         map.getPane('pane_AVMETKANALZ_2').style.zIndex = 402;
         var layer_AVMETKANALZ_2 = new L.geoJson(json_AVMETKANALZ_2, {
-            interactive: true,
-            dataVar: 'json_AVMETKANALZ_2',
-            layerName: 'layer_AVMETKANALZ_2',
-            pane: 'pane_AVMETKANALZ_2',
-            onEachFeature: pop_AVMETKANALZ_2,
-            style: style_AVMETKANALZ_2_0,
+            interactive: true, dataVar: 'json_AVMETKANALZ_2', layerName: 'layer_AVMETKANALZ_2', pane: 'pane_AVMETKANALZ_2', onEachFeature: pop_AVMETKANALZ_2, style: style_AVMETKANALZ_2_0,
         });
         bounds_group.addLayer(layer_AVMETKANALZ_2);
-        // map.addLayer(layer_AVMETKANALZ_2); // KAPALI
 
-        /* 3. Katman: KENTSEL YEŞİL ALAN SKORU */
-        function pop_KENTSELYELALANSKORU_3(feature, layer) {}
+        /* Katman 3: KENTSEL YEŞİL ALAN SKORU */
+        function pop_KENTSELYELALANSKORU_3(feature, layer) {
+            var popupContent = '<table><tr><td>' + String(feature.properties['avm_adi']) + '</td><td>Skor: ' + String(feature.properties['kentsel_yesil_skor']) + '</td></tr></table>';
+            layer.bindPopup(popupContent);
+        }
         function style_KENTSELYELALANSKORU_3_0(feature) {
-             return { pane: 'pane_KENTSELYELALANSKORU_3', opacity: 1, color: 'rgba(35,35,35,1.0)', weight: 1.0, fill: true, fillOpacity: 1, fillColor: 'rgba(123,199,124,1.0)', interactive: true, }
+            var val = feature.properties['kentsel_yesil_skor'];
+            var color = 'rgba(247,252,245,1.0)';
+            if (val > 4.442) color = 'rgba(201,234,194,1.0)';
+            if (val > 8.714) color = 'rgba(123,199,124,1.0)';
+            if (val > 12.986) color = 'rgba(42,146,75,1.0)';
+            if (val > 17.258) color = 'rgba(0,68,27,1.0)';
+            return { pane: 'pane_KENTSELYELALANSKORU_3', opacity: 1, color: '#333', weight: 1.0, fill: true, fillOpacity: 0.8, fillColor: color, interactive: true }
         }
         map.createPane('pane_KENTSELYELALANSKORU_3');
         map.getPane('pane_KENTSELYELALANSKORU_3').style.zIndex = 403;
@@ -329,12 +311,20 @@
             interactive: true, dataVar: 'json_KENTSELYELALANSKORU_3', layerName: 'layer_KENTSELYELALANSKORU_3', pane: 'pane_KENTSELYELALANSKORU_3', onEachFeature: pop_KENTSELYELALANSKORU_3, style: style_KENTSELYELALANSKORU_3_0,
         });
         bounds_group.addLayer(layer_KENTSELYELALANSKORU_3);
-        // map.addLayer(layer_KENTSELYELALANSKORU_3); // KAPALI
 
-        /* 4. Katman: ULAŞIM VE DURAK SKORU */
-        function pop_ULAIMVEDURAKSKORU_4(feature, layer) {}
+        /* Katman 4: ULAŞIM VE DURAK SKORU */
+        function pop_ULAIMVEDURAKSKORU_4(feature, layer) {
+            var popupContent = '<table><tr><td>' + String(feature.properties['avm_adi']) + '</td><td>Skor: ' + String(feature.properties['ulasim_durak_skoru']) + '</td></tr></table>';
+            layer.bindPopup(popupContent);
+        }
         function style_ULAIMVEDURAKSKORU_4_0(feature) {
-             return { pane: 'pane_ULAIMVEDURAKSKORU_4', opacity: 1, color: 'rgba(35,35,35,1.0)', weight: 1.0, fill: true, fillOpacity: 1, fillColor: 'rgba(182,55,122,1.0)', interactive: true, }
+            var val = feature.properties['ulasim_durak_skoru'];
+            var color = 'rgba(0,0,4,1.0)';
+            if (val > 18.8) color = 'rgba(80,18,123,1.0)';
+            if (val > 33.6) color = 'rgba(182,55,122,1.0)';
+            if (val > 48.4) color = 'rgba(251,135,97,1.0)';
+            if (val > 63.2) color = 'rgba(252,253,191,1.0)';
+            return { pane: 'pane_ULAIMVEDURAKSKORU_4', opacity: 1, color: '#333', weight: 1.0, fill: true, fillOpacity: 0.8, fillColor: color, interactive: true }
         }
         map.createPane('pane_ULAIMVEDURAKSKORU_4');
         map.getPane('pane_ULAIMVEDURAKSKORU_4').style.zIndex = 404;
@@ -342,12 +332,20 @@
             interactive: true, dataVar: 'json_ULAIMVEDURAKSKORU_4', layerName: 'layer_ULAIMVEDURAKSKORU_4', pane: 'pane_ULAIMVEDURAKSKORU_4', onEachFeature: pop_ULAIMVEDURAKSKORU_4, style: style_ULAIMVEDURAKSKORU_4_0,
         });
         bounds_group.addLayer(layer_ULAIMVEDURAKSKORU_4);
-        // map.addLayer(layer_ULAIMVEDURAKSKORU_4); // KAPALI
 
-        /* 5. Katman: GENÇ NÜFUS POTANSİYELİ */
-        function pop_ERLEBLRGENNUFUSPOTANSYEL_5(feature, layer) {}
+        /* Katman 5: ERİŞİLEBİLİR GENÇ NÜFUS POTANSİYELİ */
+        function pop_ERLEBLRGENNUFUSPOTANSYEL_5(feature, layer) {
+            var popupContent = '<table><tr><td>' + String(feature.properties['avm_adi']) + '</td><td>Potansiyel: ' + String(feature.properties['genc_nufus_potansiyeli']) + '</td></tr></table>';
+            layer.bindPopup(popupContent);
+        }
         function style_ERLEBLRGENNUFUSPOTANSYEL_5_0(feature) {
-             return { pane: 'pane_ERLEBLRGENNUFUSPOTANSYEL_5', opacity: 1, color: 'rgba(35,35,35,1.0)', weight: 1.0, fill: true, fillOpacity: 1, fillColor: 'rgba(40,188,235,1.0)', interactive: true, }
+            var val = feature.properties['genc_nufus_potansiyeli'];
+            var color = 'rgba(48,18,59,1.0)';
+            if (val > 7974.4) color = 'rgba(40,188,235,1.0)';
+            if (val > 12978.8) color = 'rgba(164,252,60,1.0)';
+            if (val > 17983.2) color = 'rgba(251,126,33,1.0)';
+            if (val > 22987.6) color = 'rgba(122,4,3,1.0)';
+            return { pane: 'pane_ERLEBLRGENNUFUSPOTANSYEL_5', opacity: 1, color: '#333', weight: 1.0, fill: true, fillOpacity: 0.8, fillColor: color, interactive: true }
         }
         map.createPane('pane_ERLEBLRGENNUFUSPOTANSYEL_5');
         map.getPane('pane_ERLEBLRGENNUFUSPOTANSYEL_5').style.zIndex = 405;
@@ -355,34 +353,34 @@
             interactive: true, dataVar: 'json_ERLEBLRGENNUFUSPOTANSYEL_5', layerName: 'layer_ERLEBLRGENNUFUSPOTANSYEL_5', pane: 'pane_ERLEBLRGENNUFUSPOTANSYEL_5', onEachFeature: pop_ERLEBLRGENNUFUSPOTANSYEL_5, style: style_ERLEBLRGENNUFUSPOTANSYEL_5_0,
         });
         bounds_group.addLayer(layer_ERLEBLRGENNUFUSPOTANSYEL_5);
-        // map.addLayer(layer_ERLEBLRGENNUFUSPOTANSYEL_5); // KAPALI
 
-        /* 6. Katman: YOLLAR */
+        /* Katman 6: YOLLAR */
         function pop_YOLLAR_6(feature, layer) {}
         function style_YOLLAR_6_0(feature) {
-             return { pane: 'pane_YOLLAR_6', opacity: 1, color: 'rgba(149,149,149,1.0)', weight: 1, fillOpacity: 0, interactive: true, }
+            switch(String(feature.properties['tipi'])) {
+                case 'Ana Arter': case 'Bulvar': return { pane: 'pane_YOLLAR_6', opacity: 1, color: '#ff9f43', weight: 3.0, interactive: false };
+                case 'Cadde': return { pane: 'pane_YOLLAR_6', opacity: 1, color: '#54a0ff', weight: 1.8, interactive: false };
+                case 'Devlet Yolu': case 'Otoyol': return { pane: 'pane_YOLLAR_6', opacity: 1, color: '#ff4d4d', weight: 4.0, interactive: false };
+                default: return { pane: 'pane_YOLLAR_6', opacity: 0.6, color: '#576574', weight: 1.0, interactive: false };
+            }
         }
         map.createPane('pane_YOLLAR_6');
         map.getPane('pane_YOLLAR_6').style.zIndex = 406;
         var layer_YOLLAR_6 = new L.geoJson(json_YOLLAR_6, {
-            interactive: true, dataVar: 'json_YOLLAR_6', layerName: 'layer_YOLLAR_6', pane: 'pane_YOLLAR_6', onEachFeature: pop_YOLLAR_6, style: style_YOLLAR_6_0,
+            interactive: false, dataVar: 'json_YOLLAR_6', layerName: 'layer_YOLLAR_6', pane: 'pane_YOLLAR_6', style: style_YOLLAR_6_0,
         });
         bounds_group.addLayer(layer_YOLLAR_6);
-        // map.addLayer(layer_YOLLAR_6); // KAPALI
 
-        /* 7. Katman: AVM */
+        /* Katman 7: AVM NOKTALARI */
         function pop_AVM_7(feature, layer) {
             var popupContent = '<table>\
-                    <tr><td colspan="2">' + (feature.properties['kategori'] !== null ? autolinker.link(String(feature.properties['kategori']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
-                    <tr><td colspan="2">' + (feature.properties['ort_nufus_yogunlugu'] !== null ? autolinker.link(String(feature.properties['ort_nufus_yogunlugu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
-                    <tr><td colspan="2">' + (feature.properties['toplam_etki_nufusu'] !== null ? autolinker.link(String(feature.properties['toplam_etki_nufusu']).replace(/'/g, '\'').toLocaleString()) : '') + '</td></tr>\
+                    <tr><td colspan="2"><b>Kategori:</b> ' + String(feature.properties['kategori']) + '</td></tr>\
+                    <tr><td colspan="2"><b>Etki Nüfusu:</b> ' + String(feature.properties['toplam_etki_nufusu']) + '</td></tr>\
                 </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) { addClassToPopupIfMedia(content, e.popup); });
-			layer.bindPopup(content, { maxHeight: 400 });
+            layer.bindPopup(popupContent, { maxHeight: 400 });
         }
         function style_AVM_7_0() {
-            return { pane: 'pane_AVM_7', opacity: 1, color: 'rgba(35,35,35,1.0)', weight: 1.0, fill: true, fillOpacity: 1, fillColor: 'rgba(221,49,49,1.0)', interactive: true, }
+            return { pane: 'pane_AVM_7', opacity: 1, color: '#ffffff', weight: 1.5, fill: true, fillOpacity: 1, fillColor: '#ff4757', interactive: true }
         }
         map.createPane('pane_AVM_7');
         map.getPane('pane_AVM_7').style.zIndex = 407;
@@ -390,33 +388,30 @@
             interactive: true, dataVar: 'json_AVM_7', layerName: 'layer_AVM_7', pane: 'pane_AVM_7', onEachFeature: pop_AVM_7, style: style_AVM_7_0,
         });
         bounds_group.addLayer(layer_AVM_7);
-        map.addLayer(layer_AVM_7); // AVM Katmanı Varsayılan Olarak AÇIK
+        map.addLayer(layer_AVM_7); // Varsayılan Açık
 
+
+        /* TAM LEJANT ŞABLONLARIYLA KATMAN AĞACI (OVERLAYS TREE) */
         var overlaysTree = [
             {label: '<img src="legend/AVM_7.png" /> AVM ', layer: layer_AVM_7},
-            {label: 'YOLLAR', layer: layer_YOLLAR_6},
-            {label: 'ERİŞİLEBİLİR GENÇ NUFUS POTANSİYELİ', layer: layer_ERLEBLRGENNUFUSPOTANSYEL_5},
-            {label: 'ULAŞIM VE DURAK SKORU', layer: layer_ULAIMVEDURAKSKORU_4},
-            {label: 'KENTSEL YEŞİL ALAN SKORU', layer: layer_KENTSELYELALANSKORU_3},
+            {label: 'YOLLAR<br /><table><tr><td style="text-align: center;"><img src="legend/YOLLAR_6_AnaArter0.png" /></td><td>Ana Arter / Bulvar</td></tr><tr><td style="text-align: center;"><img src="legend/YOLLAR_6_Cadde2.png" /></td><td>Cadde</td></tr><tr><td style="text-align: center;"><img src="legend/YOLLAR_6_DevletYolu7.png" /></td><td>Devlet Yolu / Otoyol</td></tr></table>', layer: layer_YOLLAR_6},
+            {label: 'ERİŞİLEBİLİR GENÇ NÜFUS POTANSİYELİ<br /><table><tr><td><img src="legend/ERLEBLRGENNUFUSPOTANSYEL_5_297079740.png" /></td><td>2970 - 7974</td></tr><tr><td><img src="legend/ERLEBLRGENNUFUSPOTANSYEL_5_7974129791.png" /></td><td>7974 - 12979</td></tr><tr><td><img src="legend/ERLEBLRGENNUFUSPOTANSYEL_5_12979179832.png" /></td><td>12979 - 17983</td></tr><tr><td><img src="legend/ERLEBLRGENNUFUSPOTANSYEL_5_17983229883.png" /></td><td>17983 - 22988</td></tr><tr><td><img src="legend/ERLEBLRGENNUFUSPOTANSYEL_5_22988279924.png" /></td><td>22988 - 27992</td></tr></table>', layer: layer_ERLEBLRGENNUFUSPOTANSYEL_5},
+            {label: 'ULAŞIM VE DURAK SKORU<br /><table><tr><td><img src="legend/ULAIMVEDURAKSKORU_4_4190.png" /></td><td>4 - 19</td></tr><tr><td><img src="legend/ULAIMVEDURAKSKORU_4_19341.png" /></td><td>19 - 34</td></tr><tr><td><img src="legend/ULAIMVEDURAKSKORU_4_34482.png" /></td><td>34 - 48</td></tr><tr><td><img src="legend/ULAIMVEDURAKSKORU_4_48633.png" /></td><td>48 - 63</td></tr><tr><td><img src="legend/ULAIMVEDURAKSKORU_4_63784.png" /></td><td>63 - 78</td></tr></table>', layer: layer_ULAIMVEDURAKSKORU_4},
+            {label: 'KENTSEL YEŞİL ALAN SKORU<br /><table><tr><td><img src="legend/KENTSELYELALANSKORU_3_02440.png" /></td><td>0.2 - 4.4</td></tr><tr><td><img src="legend/KENTSELYELALANSKORU_3_44871.png" /></td><td>4.4 - 8.7</td></tr><tr><td><img src="legend/KENTSELYELALANSKORU_3_87132.png" /></td><td>8.7 - 13</td></tr><tr><td><img src="legend/KENTSELYELALANSKORU_3_131733.png" /></td><td>13 - 17.3</td></tr><tr><td><img src="legend/KENTSELYELALANSKORU_3_1732154.png" /></td><td>17.3 - 21.5</td></tr></table>', layer: layer_KENTSELYELALANSKORU_3},
             {label: '<img src="legend/AVMETKANALZ_2.png" /> AVM ETKİ ANALİZİ', layer: layer_AVMETKANALZ_2},
-            {label: '<img src="legend/MAHALLESINIRLARI_1.png" /> MAHALLE SINIRLARI', layer: layer_MAHALLESINIRLARI_1},
-            {label: "Dark Matter [no labels]", layer: layer_DarkMatternolabels_0, radioGroup: 'bm' },]
+            {label: '<img src="legend/MAHALLESINIRLARI_1.png" /> MAHALLE SINIRLARI', layer: layer_MAHALLESINIRLARI_1}
+        ];
         
-        var lay = L.control.layers.tree(null, overlaysTree,{ collapsed: false, });
+        var lay = L.control.layers.tree(null, overlaysTree, { collapsed: false });
         lay.addTo(map);
 
-        // -- ÖZNİTELİK TABLOSUNU DİNAMİK OLUŞTURAN FONKSİYON --
+        /* DİNAMİK ÖZNİTELİK TABLOSU MOTORU */
         map.on('overlayadd', function(e) {
-            // Yalnızca BaseMap değişimlerinde tablo çıkartmamak için:
-            if(e.name.includes("Dark Matter")) return;
-            
-            // Katman ismindeki HTML etiketlerini temizleyip başlık oluşturma
             var tempDiv = document.createElement("div");
             tempDiv.innerHTML = e.name;
-            var cleanName = tempDiv.textContent || tempDiv.innerText || "Öznitelik";
-            cleanName = cleanName.trim();
+            var cleanName = (tempDiv.textContent || tempDiv.innerText || "Katman").split('<br')[0];
             
-            document.getElementById('tableTitle').innerText = cleanName + " Öznitelik Tablosu";
+            document.getElementById('tableTitle').innerText = cleanName.trim() + " Veri Matrisi (Öznitelik Tablosu)";
             
             var thead = document.getElementById('tableHead');
             var tbody = document.getElementById('tableBody');
@@ -424,42 +419,44 @@
             tbody.innerHTML = '';
 
             var features = [];
-            // Leaflet layer grubundan tüm feature'ları çıkarma
             if (e.layer.eachLayer) {
                 e.layer.eachLayer(function(l) {
                     if (l.feature && l.feature.properties) features.push(l.feature);
                 });
             }
 
-            if (features.length === 0) return; // Veri yoksa tablo yapma
+            if (features.length === 0) return;
 
             var columns = Object.keys(features[0].properties);
-            
-            // Kolon başlıkları
             columns.forEach(function(col) {
                 var th = document.createElement('th');
-                th.innerText = col;
+                th.innerText = col.toUpperCase();
                 thead.appendChild(th);
             });
 
-            // Satırlar
             features.forEach(function(f) {
                 var tr = document.createElement('tr');
                 columns.forEach(function(col) {
                     var td = document.createElement('td');
-                    td.innerText = f.properties[col] !== null ? f.properties[col] : '';
+                    td.innerText = f.properties[col] !== null ? f.properties[col] : '-';
                     tr.appendChild(td);
                 });
                 tbody.appendChild(tr);
             });
 
-            // Tabloyu Yukarı Kaydırarak Göster
             document.getElementById('tableContainer').classList.add('active');
         });
 
-        // İsteğe bağlı: Menüden katman kapatıldığında tabloyu kapatmak için:
         map.on('overlayremove', function(e) {
             document.getElementById('tableContainer').classList.remove('active');
+        });
+
+        /* QGIS Etiket Yönetimi Tetikleyicileri */
+        var labels = [];
+        var totalMarkers = 0;
+        resetLabels([layer_KENTSELYELALANSKORU_3, layer_ULAIMVEDURAKSKORU_4, layer_ERLEBLRGENNUFUSPOTANSYEL_5, layer_AVM_7]);
+        map.on("zoomend layeradd layerremove", function(){
+            resetLabels([layer_KENTSELYELALANSKORU_3, layer_ULAIMVEDURAKSKORU_4, layer_ERLEBLRGENNUFUSPOTANSYEL_5, layer_AVM_7]);
         });
         
         setBounds();
